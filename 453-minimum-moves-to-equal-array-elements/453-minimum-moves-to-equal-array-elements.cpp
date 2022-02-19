@@ -9,7 +9,7 @@ public:
             x = min(nums[i], x);
         }
         int ans =0;
-        //subtract min element from every num thebn add all
+        //subtract min element from every num then add all
         for(int i=0; i<nums.size(); i++){
             ans += (nums[i] - x);
         }
