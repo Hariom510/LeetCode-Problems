@@ -1,26 +1,23 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
 class Solution {
 public:
-    vector<string> findRestaurant(vector<string>& list1, vector<string>& list2) {
-        vector<string> v;
-        unordered_map<string, int> m;
-        for(int i=0; i<list1.size(); i++){
-            m[list1[i]] = i;
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+       //please remember this method. this is awesome
+        ListNode * a = headA;
+        ListNode * b = headB;
+        
+        while(a!=b){
+            a= (a==NULL?headB: a->next);
+            b= (b==NULL?headA : b->next);
         }
-       int minSum = INT_MAX;
-        for(int i=0; i<list2.size();i++ ){
-            
-            if(m.find(list2[i])!= m.end()){
-                if(m[list2[i]] +i <minSum){
-                    minSum = m[list2[i]] +i;
-                    v.clear();
-                    v.push_back(list2[i]);
-                    
-                }
-                else if(m[list2[i]] +i == minSum){
-                    v.push_back(list2[i]);
-                }
-            }
-        }
-        return v;
+        return b;  //we can return either a or b.
+        
     }
 };
