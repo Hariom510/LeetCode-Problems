@@ -6,7 +6,7 @@ public:
         for(int i=0; i<nums.size(); i++){
             
             if(m.find(nums[i]) != m.end()){
-                if(i-m[nums[i]] <=k)
+                if(abs(i-m[nums[i]]) <=k)
                     return true;
             }
             
