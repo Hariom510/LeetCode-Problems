@@ -7,7 +7,6 @@ public:
             m[s[i]]++;
             m[t[i]]--;
         }
-        
         for(auto val: m){
             if(val.second) return false;
         }
