@@ -15,7 +15,9 @@ public:
         while(l<r){
             if(v[l] != v[r])return false;
             l++;
-            r--;
+            r--;    
+            
+            
         }
         return true;
     }
