@@ -9,10 +9,8 @@ public:
             for(; j<n; j++){
                 if(haystack[i+j] != needle[j]) break;
             }
-            
             if(j==n) return i;
         }
-        
         return -1;
     }
 };
