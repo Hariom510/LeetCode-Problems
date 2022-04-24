@@ -35,15 +35,15 @@ public:
         first->next = NULL;
         last = first;
         
+        
         for(int i=1; i<ln-1; i++){
             temp = new ListNode;
-            
+    
             temp->val = v[i];
             temp->next = NULL;
             last->next = temp;
             last = temp;
         }
-        
          return first; 
     }
 };
