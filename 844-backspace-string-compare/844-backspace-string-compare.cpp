@@ -20,6 +20,7 @@ public:
             ++i;
         }
         
+        
         if(r1.compare(r2) ==0) return true;
         return false;
     }
