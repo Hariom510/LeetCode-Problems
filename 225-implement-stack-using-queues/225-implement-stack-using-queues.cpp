@@ -24,6 +24,8 @@ public:
         return q.front();
     }
     
+    
+    
     bool empty() {
         return q.empty();
     }
