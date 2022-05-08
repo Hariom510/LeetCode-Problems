@@ -29,7 +29,7 @@ public:
             s.insert(i);
         }
         vector<int> v1(s.begin(), s.end());
-        sort(v1.begin(), v1.end());
+        // sort(v1.begin(), v1.end());
         if(v1.size()>=2){
             return v1[1];
         }
