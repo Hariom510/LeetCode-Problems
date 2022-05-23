@@ -20,11 +20,17 @@ public:
         }
         a = ptr;
         
+        //you have to remember the below logic.
         while(ptr->next){
             b = b->next;
             ptr = ptr->next;
         }
-        swap(a->val , b->val);
+        // swap(a->val , b->val);
+        
+         int temp = a->val;
+         a->val = b->val;
+         b->val = temp;
+        
         return head;
             
         
