@@ -12,7 +12,11 @@ public:
                 num = num-1;
                 count++;
             }
+            
         }
+        
+        
+        
         return count;
         
     }
