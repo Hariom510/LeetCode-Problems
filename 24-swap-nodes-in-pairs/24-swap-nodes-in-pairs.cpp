@@ -31,8 +31,9 @@ public:
         
         //method 2
         //swap the first two then recurse the rest
-        if(head == NULL || head->next == NULL) return head;
-        
+        if(head == NULL) return NULL;
+            
+        if(head->next == NULL) return head;
         ListNode* temp = head->next;
         head->next = swapPairs(temp->next);
         temp->next = head;
