@@ -17,6 +17,8 @@ public:
             a= (a==NULL?headB: a->next);
             b= (b==NULL?headA : b->next);
         }
+        
+        
         return b;  //we can return either a or b.
         
     }
