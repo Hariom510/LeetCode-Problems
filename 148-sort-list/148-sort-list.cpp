@@ -11,31 +11,48 @@
 class Solution {
 public:
     ListNode* sortList(ListNode* head) {
+//         vector<int> v;
+//         ListNode *ptr = head;
+//         int count =0;
+//         while(ptr != NULL){
+//             v.push_back(ptr->val);
+//             ptr= ptr->next;
+//         }
+//         sort(v.begin(), v.end());
+//         int n = v.size();
+//         if(n == 0) return NULL;
+//         ListNode* first = new ListNode;
+//         ListNode* temp;
+//         ListNode* last;
+//         first->val = v[0];
+//         first->next = NULL;
+//         last = first;
+        
+//         for(int i=1; i<n; i++){
+//             temp = new ListNode;
+//             temp->val = v[i];
+//             temp->next = NULL;
+//             last->next = temp;
+//             last = temp;
+//         }
+        
+//         return first;
+        
         vector<int> v;
-        ListNode *ptr = head;
-        int count =0;
-        while(ptr != NULL){
+        ListNode* ptr = head;
+        while(ptr!=NULL){
             v.push_back(ptr->val);
-            ptr= ptr->next;
+            ptr = ptr->next;
         }
+        
         sort(v.begin(), v.end());
-        int n = v.size();
-        if(n == 0) return NULL;
-        ListNode* first = new ListNode;
-        ListNode* temp;
-        ListNode* last;
-        first->val = v[0];
-        first->next = NULL;
-        last = first;
-        
-        for(int i=1; i<n; i++){
-            temp = new ListNode;
-            temp->val = v[i];
-            temp->next = NULL;
-            last->next = temp;
-            last = temp;
+        ptr = head;
+        int i=0;
+        while(ptr!=NULL){
+            ptr->val = v[i++];
+            ptr = ptr->next;
         }
+        return head;
         
-        return first;
     }
 };
