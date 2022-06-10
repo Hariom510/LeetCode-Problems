@@ -5,6 +5,7 @@ public:
         int n = s.size();
        
         int i=0, j=0, ans =0;
+        //you need to remember this logic.
        while(i<n && j<n){
            
            if(st.find(s[j]) == st.end()){
@@ -14,10 +15,9 @@ public:
            else{
                st.erase(s[i++]);
            }
-           
-           
-           
+             
        }
+        
         return ans;
     }
 };
