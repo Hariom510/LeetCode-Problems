@@ -8,6 +8,8 @@ public:
         for(int i=0; i<n ; i++){
             sum += nums[i];
         }
+        //nhju
+        
         
         return (total-sum);
     }
