@@ -52,7 +52,7 @@ public:
             ptr->val = v[i++];
             ptr = ptr->next;
         }
+        //abshsh
         return head;
-        
     }
 };
