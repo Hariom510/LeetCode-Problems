@@ -30,6 +30,7 @@ public:
             ptr = ptr->next;
             i++;
         }
+        //jui
         return head;
     }
 };
