@@ -6,7 +6,7 @@ public:
         int count =0;
         int j=0;
         for(int i=0; i<sz; i++){
-            while(j<=ln){
+            while(j<ln){
                 if(s[i] == t[j]){
                     count++;
                     j++;
