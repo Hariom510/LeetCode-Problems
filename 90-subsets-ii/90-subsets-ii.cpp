@@ -11,12 +11,10 @@ public:
                 v.back().push_back(num);
             }
         }
-        
         for(auto it: v){
             s.insert(it);
         }
         vector<vector<int>> v1(s.begin(), s.end());
-        
         return v1;
     }
 };
