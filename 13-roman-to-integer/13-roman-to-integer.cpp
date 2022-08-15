@@ -17,5 +17,6 @@ public:
                 result += m[s[i]];
         } 
         return result;
+        //https://www.youtube.com/c/AlgorithmsMadeEasy
     }
 };
