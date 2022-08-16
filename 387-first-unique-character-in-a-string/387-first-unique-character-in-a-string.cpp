@@ -10,5 +10,6 @@ public:
             if(m[s[i]] ==1) return i;
         }
         return -1;
+        //juuy
     }
 };
