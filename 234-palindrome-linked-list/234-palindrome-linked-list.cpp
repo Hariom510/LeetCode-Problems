@@ -11,6 +11,7 @@
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
+        //by using vector.
         vector<int> v;
         ListNode* ptr= head;
       while(ptr!= NULL){
@@ -27,5 +28,23 @@ public:
             k--;
         }
         return true;
+        
+        //by not using vector
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 };
