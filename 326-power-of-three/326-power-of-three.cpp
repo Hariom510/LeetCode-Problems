@@ -7,6 +7,7 @@ public:
                 n = n/3;
             }
         }
+        //nh
         return n==1;
     }
 };
