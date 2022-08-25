@@ -11,6 +11,7 @@ public:
         for(auto val: ransomNote){
             if( m[val] >0) return false;
         }
+        //mkj
         return true;
     }
 };
