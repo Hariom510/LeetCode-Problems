@@ -23,7 +23,7 @@ public:
         pre(root->left, max);
         pre(root->right, max);
     }
-    
+    //k
     int goodNodes(TreeNode* root) {
         pre(root, INT_MIN);
         return ans;
