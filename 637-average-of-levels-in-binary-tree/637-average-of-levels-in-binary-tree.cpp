@@ -30,6 +30,7 @@ public:
             v.push_back((double)temp/sz);
             
         }
+        //kjuu
         return v;
     }
 };
