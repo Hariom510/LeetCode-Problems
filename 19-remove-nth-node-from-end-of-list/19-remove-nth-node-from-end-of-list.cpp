@@ -45,5 +45,5 @@ public:
             last = temp;
         }
          return first; 
-    }
+    } 
 };
