@@ -4,5 +4,7 @@ public:
          set<int>st;
     for(int it : sentence) st.insert(it);
     return st.size() >= 26;
+        
+        
     }
 };
