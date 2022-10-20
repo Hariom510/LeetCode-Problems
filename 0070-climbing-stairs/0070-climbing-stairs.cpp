@@ -11,34 +11,31 @@ public:
 //     }
        
        //this is tabulation (which not uses stack space)
-       int solve(int n){
+//        int solve(int n){
            
-           vector<int> dp(n+1);
-           dp[0]=dp[1]=1;
+//            vector<int> dp(n+1);
+//            dp[0]=dp[1]=1;
            
-           for(int i=2; i<=n; i++){
-               dp[i]= dp[i-1]+dp[i-2];
-           }
-           return dp[n];
-       }
-    
-    
+//            for(int i=2; i<=n; i++){
+//                dp[i]= dp[i-1]+dp[i-2];
+//            }
+//            return dp[n];
+//        }
     
     
     
     int climbStairs(int n) {
-        //please remember that this is just a fibonacci series
-        // if(n<=2) return n;
-        // int prev = 2, prev2 =1;
-        // int res;
-        // for(int i=3; i<=n; i++){
-        //     res = prev+prev2;
-        //     prev2 = prev;
-        //     prev = res;
-        // }
-        // return res;
+        //this is space optimized solutiom without using 
+        int prev1 =1, prev2=1;
+        for(int i=2; i<=n; i++){
+            int cur = prev1+prev2;
+            prev2=prev1;
+            prev1=cur;
+        }
+        return prev1;
+       
         //vector<int> dp(n+1, -1);
-        int res = solve(n);
-        return res;
+        // int res = solve(n);
+        // return res;
     }
 };
