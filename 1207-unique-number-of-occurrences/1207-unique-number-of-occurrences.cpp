@@ -10,7 +10,6 @@ public:
             s.insert(it.second);
         }
         if(s.size() == m.size()) return true;
-        
         return false;
     }
 };
