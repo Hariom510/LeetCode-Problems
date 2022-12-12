@@ -25,17 +25,18 @@ public:
     
     
     int climbStairs(int n) {
-        //this is space optimized solutiom without using 
+        //this is space optimized solutiom without using array and stack space
         int prev1 =1, prev2=1;
         for(int i=2; i<=n; i++){
             int cur = prev1+prev2;
             prev2=prev1;
             prev1=cur;
         }
+        
         return prev1;
        
         //vector<int> dp(n+1, -1);
-        // int res = solve(n);
+        // int res = solve(n); 
         // return res;
     }
 };
