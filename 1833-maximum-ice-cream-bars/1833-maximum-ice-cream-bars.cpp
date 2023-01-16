@@ -1,7 +1,6 @@
 class Solution {
 public:
     int maxIceCream(vector<int>& costs, int coins) {
-        
         int n = costs.size();
         int res=0, sum=0;
         sort(costs.begin(), costs.end());
@@ -11,7 +10,8 @@ public:
                 res++;
             }
             else{
-                break;
+                break; 
+                
             }
         }
         return res;
