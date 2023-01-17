@@ -15,7 +15,9 @@ class Solution {
           if(root==NULL) return;
           v.push_back(root->val);
           pre(root->left,v);
-          pre(root->right,v);  
+          pre(root->right,v);
+          
+          
       }
 public:
     vector<int> preorderTraversal(TreeNode* root) {
