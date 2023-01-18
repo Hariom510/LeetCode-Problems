@@ -13,6 +13,7 @@ public:
                if(cap==n-1 || sm==n-1)flag=0;
                 else flag=1;
                 
+                
           }
         else{
             cap=0;
