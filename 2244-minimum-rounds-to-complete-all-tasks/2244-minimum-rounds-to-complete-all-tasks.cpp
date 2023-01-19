@@ -20,8 +20,8 @@ public:
                     else if(v[i]%2 ==1 || v[i]%2 ==0){
                         v[i] = v[i]-2;
                         op++;
+                        
                     }
-                    // else if(v[i]==1)return -1;
                 }
             }
         }
