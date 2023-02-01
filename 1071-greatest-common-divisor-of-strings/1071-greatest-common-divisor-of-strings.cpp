@@ -6,4 +6,5 @@ public:
         int n2 = str2.size();
         return (str1+str2 == str2+str1) ? str1.substr(0, gcd(n1,n2)): "";
     }
+    
 };
