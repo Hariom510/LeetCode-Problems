@@ -1,6 +1,6 @@
 class Solution {
 public:
-    //this is best greedy problem
+    //this is the best greedy problem
     int jump(vector<int>& nums) {
        int n = nums.size();
         int farthest=0,jump=0,current=0;
@@ -11,6 +11,7 @@ public:
                 current = farthest;
                 jump++;
             }
+            if(current==n-1)break;
         }
         return jump;
     }     
