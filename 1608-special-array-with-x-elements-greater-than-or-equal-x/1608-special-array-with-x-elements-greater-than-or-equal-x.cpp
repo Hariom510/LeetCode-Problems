@@ -13,7 +13,7 @@ public:
         // sort(nums.begin(), nums.end());
         int l = 1;
         int n = nums.size();
-        int r= 1000;
+        int r= n;
         while(l<=r){
             int mid = l+(r-l)/2;
             int cnt = solve(nums,mid);
