@@ -6,7 +6,6 @@ public:
     int firstBadVersion(int n) {
         
         long long int res=0;
-        
         for(int i=1;i<=n; i++){
             bool x = isBadVersion(i);
             res++;
