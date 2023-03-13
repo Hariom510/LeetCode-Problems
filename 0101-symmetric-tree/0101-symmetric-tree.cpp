@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    //given lc function
     bool isSymmetric(TreeNode* root) {
         if(root == NULL)
             return true;
