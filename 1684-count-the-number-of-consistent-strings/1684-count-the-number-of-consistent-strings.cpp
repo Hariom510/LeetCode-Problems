@@ -2,9 +2,8 @@ class Solution {
 public:
     int countConsistentStrings(string allowed, vector<string>& words) {
         unordered_map<char, bool> m;
-        
         for(auto i: allowed){
-            if(!m[i])
+            // if(!m[i])
             m[i] = 1;
         }
         int count =0;
