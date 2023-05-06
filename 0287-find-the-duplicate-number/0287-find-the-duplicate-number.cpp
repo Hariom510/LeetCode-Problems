@@ -11,10 +11,17 @@ public:
         //     if(it->second >= 2)
         //         return it->first;
         // }
-        for(auto i=m.begin(); i!=m.end(); i++){
-            if(i->second >=2)
-                return i->first;
+        
+        for(auto i: m){
+            if(i.second >=2){
+                return i.first;
+            }
         }
+        
+        // for(auto i=m.begin(); i!=m.end(); i++){
+        //     if(i->second >=2)
+        //         return i->first;
+        // }
         return 0;
         }
 };
