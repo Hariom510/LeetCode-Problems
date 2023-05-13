@@ -10,22 +10,34 @@ public:
     // }
     // return {-1, -1};
         
-        int n = nums.size();
-        int i=0, j=i;
-        while(i<n && j<n){
-            j++;
-            if(nums[i]+nums[j] == target){
-                return {i, j};
+        
+        // O(n)
+        
+//         int n = nums.size();
+//         int i=0, j=i;
+//         while(i<n && j<n){
+//             j++;
+//             if(nums[i]+nums[j] == target){
+//                 return {i, j};
                 
-            }
-            // else{
-            //     return {i, j};
-            // }
+//             }
+//             if(j==n-1){
+//                 i++;
+//                 j=i;
+//             }
+//         }
+//         return {-1, -1};
+        
+        //O(n) using map
+        int n= nums.size();
+        map<int, int> m;
+        for(int i=0; i<n; i++){
+           if(m.find(target-nums[i]) != m.end()){
+               return { m[target-nums[i]] ,i};
+           } 
             
-            if(j==n-1){
-                i++;
-                j=i;
-            }
+            
+            m[nums[i]] = i; //as we need to return indsx so we are assigning index.
         }
         return {-1, -1};
     };
