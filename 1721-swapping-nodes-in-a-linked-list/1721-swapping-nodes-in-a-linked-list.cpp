@@ -25,14 +25,12 @@ public:
             b = b->next;
             ptr = ptr->next;
         }
-        // swap(a->val , b->val);
+        swap(a->val , b->val);
         
-         int temp = a->val;
-         a->val = b->val;
-         b->val = temp;
+//          int temp = a->val;
+//          a->val = b->val;
+//          b->val = temp;
         
-        return head;
-            
-        
+        return head;  
     }
 };
