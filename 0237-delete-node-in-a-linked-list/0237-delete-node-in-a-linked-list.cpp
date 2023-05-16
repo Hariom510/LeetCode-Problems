@@ -10,16 +10,20 @@ class Solution {
 public:
     void deleteNode(ListNode* node) {
         
-        if(node == NULL)
-            return;
-        node->val = node->next->val;
+//         if(node == NULL)
+//             return;
+//         node->val = node->next->val;
         
-        ListNode *ptr = node->next;
+//         ListNode *ptr = node->next;
+//         node->next = node->next->next;
+        
+        // delete ptr;
+        
+        
+        
+        node->val = node->next->val;
         node->next = node->next->next;
         
-        delete ptr;
         
-        
-    
     }
 };
