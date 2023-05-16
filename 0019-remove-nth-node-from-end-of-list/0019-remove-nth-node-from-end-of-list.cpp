@@ -50,21 +50,41 @@ public:
 //          return first; 
         
         
-        // best approach
-        ListNode *dummy = new ListNode();
-        ListNode *fast = dummy;
-        ListNode *slow = dummy;
-        dummy->next = head;
-        while(n--){
-            fast = fast->next;
+        // O(2n) approach
+        int cnt =0;
+        ListNode* ptr = head;
+        while(ptr!=NULL){
+            cnt++;
+            ptr= ptr->next;
         }
-        while(fast->next != NULL){
-            fast = fast->next;
+        
+        ListNode *dummy = new ListNode();
+        dummy->next = head;
+        ListNode *slow = dummy;
+        int x = cnt-n;
+        while(x--){
             slow = slow->next;
         }
         
         slow->next = slow->next->next;
         return dummy->next;
+        
+        
+        // best approach O(n)
+//         ListNode *dummy = new ListNode();
+//         ListNode *fast = dummy;
+//         ListNode *slow = dummy;
+//         dummy->next = head;
+//         while(n--){
+//             fast = fast->next;
+//         }
+//         while(fast->next != NULL){
+//             fast = fast->next;
+//             slow = slow->next;
+//         }
+        
+//         slow->next = slow->next->next;
+//         return dummy->next;
         
         
     } 
