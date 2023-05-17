@@ -25,9 +25,10 @@ public:
                     slow = slow->next;
                     entry = entry->next;
                 }
-                return entry;
+                return slow;
             }
         }
         return NULL;
+     // As no extra data structure is used. zso this is a constant space complexity O(1).
     }
 };
