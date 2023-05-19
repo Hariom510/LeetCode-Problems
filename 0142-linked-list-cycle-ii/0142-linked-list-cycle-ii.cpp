@@ -16,7 +16,6 @@ public:
         ListNode *fast = head;
         ListNode *entry = head;
        
-        
         while(fast->next && fast->next->next){
             slow = slow->next;
             fast = fast->next->next;
@@ -25,7 +24,7 @@ public:
                     slow = slow->next;
                     entry = entry->next;
                 }
-                return slow;
+                return entry;
             }
         }
         return NULL;
