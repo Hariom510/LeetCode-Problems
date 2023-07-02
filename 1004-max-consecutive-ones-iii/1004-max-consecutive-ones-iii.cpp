@@ -1,30 +1,26 @@
 class Solution {
 public:
     int longestOnes(vector<int>& nums, int k) {
-        int n=nums.size();
-        int j=0,i=0,ans=0;
-        int zeroCount=0;
+        int n= nums.size();
+        int i=0,j=0;
+        int ans=INT_MIN;
+        int l=0;
         while(j<n){
-           
-           if(nums[j]==0){
-               zeroCount++;
-           }
-            while(zeroCount>k){
-                if(nums[i]==0)zeroCount--;
-                i++;  
+            if(nums[j++]==0){
+                l++;
             }
             
-            // if(nums[j]==0 && k==0){
-            //   if(nums[i]==0)k=1;
-            //    else while(nums[i]!=0)i++; 
-            //   i++;   
-            //   j++;
+            // if(l > k){
+                
+                
+                while(l>k){
+                   if(nums[i++]==0)l--; 
+                }
             // }
             
-            j++;
-            ans=max(ans, j-i);
-            
+            ans = max(ans, j-i);
         }
+        
         return ans;
     }
 };
