@@ -1,19 +1,20 @@
 class Solution {
 public:
     int largestAltitude(vector<int>& gain) {
-        int n = gain.size();
-        int total =0,ans=0;
+        int n= gain.size();
+        // vector<int> pre(n);
+        int total =0;
+        int ans = 0;   //Not INT_MIN because 0 is added at front a/c to question
         for(int i=0; i<n; i++){
             total += gain[i];
+            // pre[i] = total;
             ans = max(ans, total);
         }
-       return ans;
-        
-        // for(int i=1; i<n; i++){
-        //    gain[i] = (gain[i]+gain[i-1]);
+        // for(int i=0; i<n; i++){
+        //     ans = max(ans, pre[i]);
         // }
-        // gain.push_back(0);
-        // sort(gain.begin(), gain.end());
-        // return gain[n];
+        
+        return ans;
+        
     }
 };
