@@ -11,18 +11,15 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        //sliding pointers method by Abdul bari sir.
-        ListNode *p =head;
-        ListNode *q =NULL;
-        ListNode *r = NULL;
+        ListNode* r=NULL;
+        ListNode* q =NULL;
+        ListNode* p=head;
         while(p!=NULL){
-            
             r=q;
             q=p;
-            p = p->next;
-            q->next = r;
+            p=p->next;
+            q->next=r;
         }
-        // head = q;
         return q;
     }
 };
