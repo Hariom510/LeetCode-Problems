@@ -11,22 +11,27 @@
  */
 class Solution {
 public:
-    void pre(TreeNode* root, vector<int>& v){
+   
+    void pre(TreeNode* root, vector<int> &v){
         if(root==NULL)return;
         
-        if(root->left==nullptr && root->right==nullptr)v.push_back(root->val);
+        if(!root->left && !root->right)v.push_back(root->val);
         pre(root->left, v);
         pre(root->right, v);
-        return;
         
     }
     bool leafSimilar(TreeNode* root1, TreeNode* root2) {
-        vector<int> v1;
-        vector<int> v2;
-        pre(root1,v1);
-        pre(root2,v2);
-        if(v1==v2)return true;
+      
+         vector<int> v1;
+         vector<int> v2;
+        pre(root1, v1);
+        pre(root2, v2);
         
-        return false;
+   
+        
+        // for(auto i:v1)cout<<i<<" ";
+        
+        return v1==v2;
+        
     }
 };
