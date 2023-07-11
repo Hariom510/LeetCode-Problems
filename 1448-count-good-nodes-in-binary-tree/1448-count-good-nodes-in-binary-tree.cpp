@@ -11,19 +11,18 @@
  */
 class Solution {
 public:
-    //pre-order traversal then finding maxm problem.
-    int ans =0;
-    void pre(TreeNode* root, int max){
-        if(root == NULL)return;
+    int ans=0;
+    void pre(TreeNode* root, int maxi){
+        if(!root)return;
         
-        if(root->val >= max){
+        if(root->val >= maxi){
             ans++;
-            max = root->val;
+            maxi = root->val;
         }
-        pre(root->left, max);
-        pre(root->right, max);
+        
+        pre(root->left, maxi);
+        pre(root->right, maxi);
     }
-    //k
     int goodNodes(TreeNode* root) {
         pre(root, INT_MIN);
         return ans;
