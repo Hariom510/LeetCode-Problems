@@ -1,23 +1,22 @@
 class SmallestInfiniteSet {
 public:
-    //set always holds element in sorted order
     set<int> s;
     SmallestInfiniteSet() {
-        //clear the set for running different test cases
         s.clear();
         for(int i=1; i<=1000; i++){
             s.insert(i);
         }
+        
     }
     
     int popSmallest() {
-       int beg = *s.begin();
-        s.erase(beg);
-        return beg;
+        int num = *s.begin();
+            s.erase(num);
+        return num;
     }
     
     void addBack(int num) {
-      s.insert(num);
+        s.insert(num);
     }
 };
 
