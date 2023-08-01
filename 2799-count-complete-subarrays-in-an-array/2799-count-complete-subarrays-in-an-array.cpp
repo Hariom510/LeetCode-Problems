@@ -13,6 +13,7 @@ public:
             for(int j=i; j<n; j++){
                 s1.insert(nums[j]);
                 if(s1.size()==len)res++;
+                else if(s1.size()>len)break;
             }
         }
         
