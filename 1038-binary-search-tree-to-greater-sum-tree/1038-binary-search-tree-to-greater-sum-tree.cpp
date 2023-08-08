@@ -11,17 +11,18 @@
  */
 class Solution {
 public:
-    TreeNode* bstToGst(TreeNode* root) {
-        int prev =0;
-        sumNode(root,prev);
-        return root;
+    void solve(TreeNode* root,int &sum){
+        if(root==NULL)return;
+        solve(root->right, sum);
+        root->val = root->val + sum;
+        sum = root->val;
+        solve(root->left, sum);
     }
     
-     void sumNode(TreeNode* root, int &prev){
-        if(root==NULL) return;
-        sumNode(root->right, prev);
-        root->val += prev;
-        prev = root->val;
-        sumNode(root->left, prev);
+    
+    TreeNode* bstToGst(TreeNode* root) {
+        int sum =0;
+        solve(root, sum);
+        return root;
     }
 };
