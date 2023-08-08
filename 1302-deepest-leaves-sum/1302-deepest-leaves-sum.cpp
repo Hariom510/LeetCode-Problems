@@ -11,29 +11,25 @@
  */
 class Solution {
 public:
-    //please  go through this solution many number of times.
-    //this is awesome question.
-    //for level order we have to use queue data structure.
     int deepestLeavesSum(TreeNode* root) {
-        if(root== NULL) return 0;
-        queue<TreeNode*> q;
-        int sum=0;
+       //we will find the sum at each level and then at last level sum will be return. 
+        // if(root==nullptr)return 0;  //as node least number should be 1
+        queue<TreeNode *> q;
         q.push(root);
+        int sum;
         while(!q.empty()){
-            int sz = q.size();
+           int n = q.size();
             sum =0;
-            for(int i=0; i<sz; i++){
-                TreeNode* front = q.front();
-                q.pop();
+            for(int i=0; i<n; i++){
+                 TreeNode * front = q.front();
+                 q.pop();
                 sum += front->val;
-                if(front->left != NULL)q.push(front->left);
-                if(front->right != NULL) q.push(front->right);
+                if(front->left)q.push(front->left);
+                if(front->right)q.push(front->right);
+                
             }
         }
-        
-        
-          return sum;
-        
+        return sum;
         
     }
 };
