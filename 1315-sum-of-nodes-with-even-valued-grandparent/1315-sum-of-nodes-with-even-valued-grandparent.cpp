@@ -11,26 +11,26 @@
  */
 class Solution {
 public:
-    int sumEvenGrandparent(TreeNode* root) {
-        if(root == NULL) return 0;
+    int solve(TreeNode* root){
+        if(root==NULL)return 0;
         
-        int sum =0;
+        int sum =0;   //in each recursive call we declear sum to 0.
         if(root->val%2==0){
-            if(root->left!=NULL && root->left->left!=NULL)
-               sum+=  root->left->left->val;
-            if(root->left!=NULL && root->left->right!=NULL)
-                sum+= root->left->right->val;
-            if(root->right!=NULL && root->right->right != NULL)
-                sum+=root->right->right->val;
-            if(root->right!= NULL && root->right->left != NULL)
-                sum += root->right->left->val;
+            if(root->left && root->left->left)sum += root->left->left->val;
+            if(root->left && root->left->right)sum += root->left->right->val;
+            
+            if(root->right && root->right->right)sum += root->right->right->val;
+            if(root->right && root->right->left)sum += root->right->left->val;
         }
-        
-        //dfs
-        sum+= sumEvenGrandparent(root->left);
-        sum+= sumEvenGrandparent(root->right);
+        sum += solve(root->left);  //the previous sum will be added to the new sum
+        sum += solve(root->right);
         
         return sum;
+    }
+    
+    int sumEvenGrandparent(TreeNode* root) {
+       int res = solve(root);
         
+        return res;
     }
 };
