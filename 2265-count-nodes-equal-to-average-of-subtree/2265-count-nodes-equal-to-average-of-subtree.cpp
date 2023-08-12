@@ -11,41 +11,27 @@
  */
 class Solution {
 public:
-    void average(TreeNode* root, int &ans){
-        queue<TreeNode*> q;
-        q.push(root);
-        int sum =0;
-        int cnt=0;
-        while(!q.empty()){
-            int sz = q.size();
-            while(sz--){
-               TreeNode* front = q.front();
-                q.pop();
-                sum += front->val;
-                cnt++;
-                if(front->left)q.push(front->left);
-                if(front->right)q.push(front->right);  
-            }
-        }
-         if((sum/cnt)==root->val)
-                ans++;
+    // great question
+    int cnt =0;
+    pair<int, int> solve(TreeNode* root){
+        if(root==NULL)return {0,0};
+        
+        auto left = solve(root->left);
+        auto right = solve(root->right);
+        
+        int sum = left.first + right.first+ root->val;
+        int n = left.second + right.second+ 1;
+        
+        int avg = sum/n;
+        if(avg == root->val)cnt++;
+        
+        return {sum, n};
     }
     
     
     int averageOfSubtree(TreeNode* root) {
-         queue<TreeNode*> q;
-        q.push(root);
-        int ans =0;
-        while(!q.empty()){
-            int sz = q.size();
-            while(sz--){
-               TreeNode* front = q.front();
-                q.pop();
-                average(front,ans);
-                if(front->left)q.push(front->left);
-                if(front->right)q.push(front->right);  
-            }
-        }
-         return ans;
-      }
+        auto x = solve(root);
+        
+        return cnt;
+    }
 };
