@@ -9,19 +9,16 @@ public:
             if(nums[i]<pivot){
                 v1.push_back(nums[i]);
             }
-        }
-        for(int i=0; i<n; i++){
-            if(nums[i]==pivot){
-                v1.push_back(nums[i]);
+             if(nums[i]==pivot){
+                v2.push_back(nums[i]);
+            }
+            if(nums[i]>pivot){
+                v3.push_back(nums[i]);
             }
         }
         
-        for(int i=0; i<n; i++){
-            if(nums[i]>pivot){
-                v1.push_back(nums[i]);
-            }
-        }
-        // merge(v1.begin(), v1.end(), v2.begin(), v2.end(), v3.begin());
+        v1.insert(v1.end(), v2.begin(), v2.end());
+        v1.insert(v1.end(), v3.begin(), v3.end());
         return v1;
     }
 };
