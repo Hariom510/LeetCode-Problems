@@ -10,50 +10,51 @@
  */
 class Solution {
 public:
-    int pairSum(ListNode* head) {
-//         vector<int> v;
-//         ListNode *p = head;
+    ListNode* middleNode(ListNode* head){
+        ListNode* slow = head;
+        ListNode* fast = head;
         
-//         while(p != NULL){
-//             v.push_back(p->val);
-//             p = p->next;
-//         }
-//         int i=0, j= v.size()-1;
-//         int maxi = 0;
-//         while(i<j){
-//             maxi = max(maxi, v[i++]+v[j--]);
-//         }
-//         return maxi;
-        
-        
-        
-        //get middle element
-        ListNode *slow =head;
-        ListNode *fast = head;
-        
-        while(fast && fast->next){
-            slow = slow->next;        //slow will give the middle element
+         while(fast->next!=NULL && fast->next->next!=NULL){
+            slow = slow->next;
             fast = fast->next->next;
         }
+        // cout<< "slow is " << slow->val;
+        return slow;
+    }
+    
+    ListNode* reverse(ListNode* head){
+        ListNode* p = head;
+        ListNode* q, *r;
+        q = NULL, r=NULL;
         
-        //reverse the second half (rembermber the below awesome logic)
-        ListNode *prev = NULL;
-        ListNode *nextnode;
-        while(slow){
-            nextnode = slow->next;
-            slow->next = prev;
-            prev = slow;
-            slow = nextnode;
-        }
-        
-        int maxi =0;
-        while(prev){
-            maxi = max(maxi, head->val+prev->val);
-            prev = prev->next;
-            head = head->next;
-        }
-        
-        return maxi;
+        while(p!=NULL){
+            r=q;
+            q=p;
+            p=p->next;
+            q->next=r;
            
+        }
+         // cout<< "q is " << q->val;
+        return q;
+    }
+    
+    
+    int pairSum(ListNode* head) {
+       
+        ListNode* middle = middleNode(head);
+        
+        middle->next = reverse(middle->next);
+        
+        
+        ListNode* p, *q;
+        p = head;
+        q= middle->next;
+        int maxi = 0;
+        while(q!=NULL){
+            maxi = max(maxi, p->val+q->val);
+            p=p->next;
+            q=q->next;
+        }
+        return maxi;  
     }
 };
