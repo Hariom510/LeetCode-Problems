@@ -11,31 +11,31 @@
  */
 class Solution {
 public:
-    vector<TreeNode*> v;
-    //storing sorted values in a vector
-    void inor(TreeNode* root){
-        if(root==NULL) return;
-        
-        inor(root->left);
-        v.push_back(root);
-        inor(root->right);
+    vector<int> v;
+    void inorder(TreeNode* root){
+        if(!root)return;
+        inorder(root->left);
+        v.push_back(root->val);
+        inorder(root->right);
+        return; 
     }
-    //forming balanced tree from mid elements
-    TreeNode* bal(int start, int end){
-        if(start>end) return NULL;
+    TreeNode* bst( int start, int end){
+        if(start>end)return NULL;
         
         int mid = (start+end)/2;
-        TreeNode* root = v[mid];
-        root->left = bal(start, mid-1);
-        root->right = bal(mid+1, end);
+        TreeNode* root = new TreeNode(v[mid]);
+        root->left = bst(start, mid-1);
+        root->right = bst(mid+1, end);
+        
         return root;
+        
     }
     
     TreeNode* balanceBST(TreeNode* root) {
-        
-        inor(root);
-        return bal(0, v.size()-1);
+        // vector<int> v = inor(root);
+        inorder(root);
+        int n = v.size();
+        TreeNode* res = bst(0, n-1);
+        return res;
     }
-    
-    
 };
