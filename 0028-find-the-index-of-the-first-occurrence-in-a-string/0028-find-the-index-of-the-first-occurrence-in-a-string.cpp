@@ -1,17 +1,19 @@
 class Solution {
 public:
     int strStr(string haystack, string needle) {
-        int m = haystack.size();
-        int n = needle.size();
-        if(n==0) return 0;
-        for(int i=0; i<=m-n; i++){
-            int j=0;
-            for(; j<n; j++){
-                if(haystack[i+j] != needle[j]) break;
+        // map<string, int> mp;
+        // m.insert({needle, 1});
+        int n = haystack.size();
+        int m = needle.size();
+        for(int i=0; i<n; i++){
+            string temp = "";
+            for(int j=i; j<n && j<(i+m); j++){
+                temp += haystack[j];
             }
-            if(j==n) return i;
+            cout<<"temp is "<<temp<<endl;
+            if(temp==needle)return i;
         }
-        return -1;
         
+        return -1;
     }
 };
