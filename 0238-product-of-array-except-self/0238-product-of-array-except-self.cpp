@@ -4,7 +4,7 @@ public:
         int n = nums.size();
         
         vector<int> v(n);
-        int temp =1;
+        int temp = 1;
         for(int i=0; i<n; i++){
             v[i] = temp;
             temp = temp*nums[i]; //for next iteration
