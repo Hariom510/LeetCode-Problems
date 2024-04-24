@@ -1,38 +1,19 @@
 class Solution {
 public:
     int solve(int n, vector<int> &dp){
-        if(n==0) return 0;
-        if(n==1 || n==2) return 1;
+        if(n==0)return 0;
+        else if(n==1 || n==2)return 1;
         
-        if(dp[n]!=-1) return dp[n];
-        return dp[n] = solve(n-1, dp)+ solve(n-2, dp)+solve(n-3, dp);
+        if(dp[n]!=-1)return dp[n];
+        
+        return dp[n]= solve(n-1,dp)+solve(n-2, dp)+ solve(n-3, dp);
     }
     
+    
     int tribonacci(int n) {
-//         int a=0, b=1, c=1;
-//         int index =3;
-//         int sum =0;
-//        if(n==0) return 0;
-        
-//        else if(n<=2) return 1;
-        
-//         else{
-//             while(index<=n){
-//                 sum = a+b+c;
-//                 index++; 
-//                 a=b;
-//                 b=c;
-//                 c=sum; 
-//             }
-//             return sum;
-//         }
-//         return 0;
-        
-        //memoization
-        
         vector<int> dp(n+1, -1);
         int res = solve(n, dp);
         return res;
-        
+          
     }
 };
